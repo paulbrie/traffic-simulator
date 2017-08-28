@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Traffic Lab - Piata Mihai Viteazu</title>
+    <style type="text/css">
+      body { border: 0; margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
+      
+      #motilor {
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        width: 1200px;
+        height: 36px;
+        background-color: #ccc;
+      }
+      
+      .car {
+        position: absolute;
+        border: solid 1px black;
+        text-align: center;
+        font-size: 8px;
+      }
+
+      footer {
+        width: 100%;
+        background-color: #ccc;
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        font-size: 0.8em;
+        line-height: 2em;
+      }
+
+
+
+      footer div {
+        margin: 1em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="simulator">
+      Strata Mihai Viteazu - 300m - scale: 1 meter = 4px
+      <div id="motilor">
+      </div>
+    </div>
+    <street>
+    </street>
+    <footer>
+      <div><strong>Traffic Lab</strong> | <a href="#" onclick="startExperiment()">Start experiment</a>
+        <br><i>cS</i> =  current Speed, <i>tS</i> = targetSpeed, <i>d</d> = distance
+      </div>
+    </footer>
+  </body>
+  <script src="js/car.js"></script>
+  <script>
+    const cars = []
+
+    for (let i = 0; i < 8; i++) {
+      console.log('new car')
+      new Car({ cars, pxPerMeter: 4 })
+    }
+
+    function startExperiment() {
+      document.getElementById('car7').click()
+    }
+  </script>
+</html>
